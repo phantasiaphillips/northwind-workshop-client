@@ -101,11 +101,11 @@ function createCard(x) {
     divForResults.innerHTML += `
         <div class="col">
             <div class="card h-100">
-                <a href="http://127.0.0.1:5500/details.html?productId=${x.productId}">
+                <a href="http://127.0.0.1:5500/productsdetails.html?productId=${x.productId}">
                     <img src="${getImage(x)}" class="card-img-top">
                 </a>
                 <div class="card-body">
-                    <a href="http://127.0.0.1:5500/details.html?productId=${x.productId}" style='text-decoration: none; color: Black;'>
+                    <a href="http://127.0.0.1:5500/productsdetails.html?productId=${x.productId}" style='text-decoration: none; color: Black;'>
                         <h5 class="card-title">${x.productName}</h5>
                     </a>
                     <p class="card-text">${x.productId}</p>

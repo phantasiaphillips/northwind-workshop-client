@@ -19,7 +19,7 @@ function createCard(x) {
     document.getElementById("divForResults").innerHTML = `
         <div class="col">
             <div class="card h-100">
-                <a href="http://127.0.0.1:5500/details.html?productId=${x.productId}">
+                <a href="http://127.0.0.1:5500/productsdetails.html?productId=${x.productId}">
                     <img src="" class="card-img-top" alt="">
                 </a>
                 <div class="card-body">
