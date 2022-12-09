@@ -1,36 +1,33 @@
-"use strict";
 
-window.onload = function () {
-  const urlParams = new URLSearchParams(location.search);
+"use strict"
 
-  let productId = -1;
-  if (urlParams.has("productId") === true) {
-    productId = urlParams.get("productId");
+window.onload = function() {
+    const urlParams = new URLSearchParams(location.search);
 
-    fetch("http://localhost:8081/api/products/" + productId)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        let display = document.getElementById("detailsDisplay");
+    let productId = -1;
+    if (urlParams.has("productId") === true) {
+        productId = urlParams.get("productId");
+        fetch("http://localhost:8081/api/products/" + productId)
+            .then(response => response.json())
+            .then(data => {
+                createCard(data);
+            });
+    }
+}
 
-        display.innerHTML =
-          "<span style='color: black; '> Product ID : </span>" +
-          data.productId +
-          "<br />" +
-          "<span style='color: black ; '> Category ID : </span>" +
-          data.categoryId +
-          "<br />" +
-          "<span style='color: black; '> Product Name : </span> " +
-          data.productName +
-          "<br />" +
-          "<span style='color: black ; '>  Unit Price : </span>" +
-          data.unitPrice +
-          "<br />" +
-          "<span style='color: black ; '> Unit in Stock: </span>" +
-          data.unitsInStock +
-          "<br />" +
-          "<span style='color: black ; '> Supplier : </span>" +
-          data.supplier;
-      });
-  }
-};
+function createCard(x) {
+    document.getElementById("divForResults").innerHTML = `
+        <div class="col">
+            <div class="card h-100">
+                <a href="http://127.0.0.1:5500/details.html?productId=${x.productId}">
+                    <img src="" class="card-img-top" alt="">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">${x.productName}</h5>
+                    <p class="card-text">${x.productId}</p>
+                    <p class="card-text">$${Number(x.unitPrice).toFixed(2)}</p>
+                </div>
+            </div>
+        </div>
+    `
+}

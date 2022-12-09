@@ -90,10 +90,10 @@ function addOptToCategorySelect() {
 }
 
 function getImage(product) {
-    for (let imgArray of imageArray) {
-        if (imgArray.categoryId == product.categoryId) {
-            return imgArray.img;
-        }
+    for (let imgArray of imageArray){
+       if (imgArray.categoryId == product.categoryId){
+        return imgArray.img;
+       }
     }
 }
 
