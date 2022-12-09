@@ -162,4 +162,26 @@ li.dropdown {
 .navbar-expand-md .navbar-nav .nav-link:active {
     border-top: 4px solid rgb(255, 236, 98);
     color: orange;
+
 }
+
+
+img {
+    height: 350px;
+}
+
+h5:hover {
+    color: blue;
+}
+
+
+.main {
+    margin: auto;
+    position: relative;
+    height: 10em;
+    align-items: center;
+
+}
+
+
+
